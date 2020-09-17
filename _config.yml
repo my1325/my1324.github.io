@@ -100,6 +100,25 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: ayer
 
+ #hexo-generator-searchdb
+search:
+  path: search.xml
+  field: post
+  format: html
+
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date 
+
+# Toc
+toc: true
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:

@@ -112,7 +112,7 @@ mouse:
   path: /images/mouse.cur
 
 # 鼠标点击效果：0-关闭，1-爱心，2-爆炸烟花，3-粒子烟花
-click_effect: 0
+click_effect: 3
 
 # 页面宽度自定义（不建议修改，可能造成布局混乱），article_width文章宽度，sidebar_width侧边栏宽度
 layout:
@@ -158,7 +158,7 @@ katex:
   copy_tex: false
 
 # 网站成立年份(默认为 2019，若填入年份小于当前年份，则显示为 2018-2019 类似的格式)
-since: 2015
+since: 2020
 
 # 是否显示页脚信息(建议保留)
 pageFooter: true
@@ -166,46 +166,46 @@ pageFooter: true
 # ICP备案信息尾部显示
 icp:
   enable: false
-  url: "http://www.beian.miit.gov.cn/" # 备案链接
-  text: "浙ICP备88888888" # 备案信息
+  #url: "http://www.beian.miit.gov.cn/" # 备案链接
+  #text: "浙ICP备88888888" # 备案信息
 # 公安备案信息尾部显示
 gongan:
   enable: false
-  img: /images/beian.png #公安备案图片
-  url: "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=01234567890123" #公安备案链接
-  text: "浙公网安备01234567890123号" #公安备案信息
+  #img: /images/beian.png #公安备案图片
+  #url: "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=01234567890123" #公安备案链接
+  #text: "浙公网安备01234567890123号" #公安备案信息
 
 # 友情链接
-friends_link:
-  Ayer主题: #网站名称
-    #网站地址
-    url: https://github.com/Shen-Yu/hexo-theme-ayer
-    #网站图片(可忽略不写)
-    img: /images/ayer.png
-  GitHub:
-    url: https://github.com/Shen-Yu
-    img: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/github.png
-  码云:
-    url: https://gitee.com/shen-yu
-    img: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/gitee.png
-  Hexo官网:
-    url: https://hexo.io
-    img: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/hexo.png
-  Hexo图表插件:
-    url: https://github.com/Shen-Yu/hexo-tag-chart
-    img: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/hexo-tag-chart.png
+# friends_link:
+#   Ayer主题: #网站名称
+#     #网站地址
+#     url: https://github.com/Shen-Yu/hexo-theme-ayer
+#     #网站图片(可忽略不写)
+#     img: /images/ayer.png
+#   GitHub:
+#     url: https://github.com/Shen-Yu
+#     img: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/github.png
+#   码云:
+#     url: https://gitee.com/shen-yu
+#     img: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/gitee.png
+#   Hexo官网:
+#     url: https://hexo.io
+#     img: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/hexo.png
+#   Hexo图表插件:
+#     url: https://github.com/Shen-Yu/hexo-tag-chart
+#     img: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/hexo-tag-chart.png
 
 # 评论：1、Valine(推荐)；2、Gitalk；3、MiniValine
 
 # 1、Valine[一款快速、简洁且高效的无后端评论系统](https://github.com/xCss/Valine)
 # 启用Valine必须先创建leancloud应用， 获取 id|key 填入即可
-leancloud:
-  enable: true
-  app_id: #
-  app_key: #
+# leancloud:
+#   enable: true
+#   app_id: #
+#   app_key: #
 # Valine配置
 valine:
-  enable: true # 是否启用
+  enable: false # 是否启用
   avatar: monsterid # 头像样式(https://valine.js.org/avatar.html)
   placeholder: 给我的文章加点评论吧~ # placeholder
 
