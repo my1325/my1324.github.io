@@ -80,13 +80,13 @@ word_count:
 
 # 打赏
 # 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
-reward_type: 2
+reward_type: 0
 # 打赏wording
-reward_wording: "请我喝杯咖啡吧~"
+# reward_wording: "请我喝杯咖啡吧~"
 # 支付宝二维码图片地址，跟你设置logo的方式一样。比如：/images/alipay.jpg
-alipay: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg
+# alipay: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg
 # 微信二维码图片地址
-weixin: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg
+# weixin: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg
 
 # 版权声明
 # 版权声明type设定：0-关闭版权声明； 1-文章对应的md文件里有copyright: true属性，才有版权声明； 2-所有文章均有版权声明
@@ -104,7 +104,7 @@ rss: /atom.xml
 darkmode: true
 
 # 动态背景效果: 0-关闭，1-动态线条(跟随鼠标)
-canvas_bg: 0
+canvas_bg: 1
 
 # 自定义鼠标样式，直接替换/images/mouse.cur文件
 mouse:
@@ -122,7 +122,7 @@ layout:
 # GitHub Ribbons-封面右上角的forkme，换样式直接在source/images目录下替换forkme图片
 github:
   # (关闭请设置为false)
-  enable: true
+  enable: false
   url: https://github.com/Shen-Yu/hexo-theme-ayer
 
 # 网易云音乐插件
@@ -139,8 +139,8 @@ busuanzi:
 
 # 友盟cnzz统计(url填js代码src链接)
 cnzz:
-  enable: true
-  url: https://s9.cnzz.com/z_stat.php?id=1278069914&web_id=1278069914
+  enable: false
+  # url: https://s9.cnzz.com/z_stat.php?id=1278069914&web_id=1278069914
 
 # Google Analytics
 google_analytics: ""
