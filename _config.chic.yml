@@ -6,6 +6,7 @@ nav:
   Posts: /archives
   Categories: /category
   Tags: /tag
+  # About: /about
 
 # favicon
 favicon: /favicon.ico
@@ -15,7 +16,7 @@ nickname: my1325
 
 ### this variable is MarkDown form.
 # description: Lorem ipsum dolor sit amet, **consectetur adipiscing elit.** <br>Fusce eget urna vitae velit *eleifend interdum at ac* nisi.
-description: <br>一个落魄的iOSer
+description: <br>一个落魄的iOSer</br>
 avatar: /image/my_1325_avatar.png
 
 # main menu navigation
