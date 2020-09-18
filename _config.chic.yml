@@ -6,7 +6,6 @@ nav:
   Posts: /archives
   Categories: /category
   Tags: /tag
-  About: /about
 
 # favicon
 favicon: /favicon.ico
@@ -25,6 +24,8 @@ avatar: /image/my_1325_avatar.png
 ## Unused key can be commented out.
 links:
   Blog: /archives
+  Github: https://github.com/my1325
+
   # Category:
   # Tags: 
   # Link:
@@ -50,7 +51,6 @@ links:
   # QQ: 
   # Weibo:
   # WeChat: /image/wechat_
-  Github: https://github.com/my1325
 
 # how links show: you have 2 choice--text or icon.
 links_text_enable: false
