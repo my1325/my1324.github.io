@@ -20,7 +20,8 @@ favicon: /favicon.ico
 nickname: my1325
 
 ### this variable is MarkDown form.
-description: 一个落魄的iOSer.
+# description: Lorem ipsum dolor sit amet, **consectetur adipiscing elit.** <br>Fusce eget urna vitae velit *eleifend interdum at ac* nisi.
+description: <br>一个落魄的iOSer.
 avatar: /image/my_1325_avatar.png
 
 # main menu navigation
