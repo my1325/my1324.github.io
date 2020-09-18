@@ -1,11 +1,16 @@
 # Header
-navname: Bentham's Blog
+navname: my's Blog
 
 # navigatior items
 nav:
-  Posts: /archives
-  Categories: /category
-  Tags: /tag
+  # Posts: /archives
+  # Categories: /category
+  # Tags: /tag
+  # About: /about
+
+  归档: /archives
+  分类: /category
+  标签: /tag
   About: /about
 
 # favicon
