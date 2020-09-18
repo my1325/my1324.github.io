@@ -3,14 +3,9 @@ navname: my's Blog
 
 # navigatior items
 nav:
-  # Posts: /archives
-  # Categories: /category
-  # Tags: /tag
-  # About: /about
-
-  归档: /archives
-  分类: /category
-  标签: /tag
+  Posts: /archives
+  Categories: /category
+  Tags: /tag
   About: /about
 
 # favicon
@@ -21,7 +16,7 @@ nickname: my1325
 
 ### this variable is MarkDown form.
 # description: Lorem ipsum dolor sit amet, **consectetur adipiscing elit.** <br>Fusce eget urna vitae velit *eleifend interdum at ac* nisi.
-description: <br>一个落魄的iOSer.
+description: <br>一个落魄的iOSer
 avatar: /image/my_1325_avatar.png
 
 # main menu navigation
