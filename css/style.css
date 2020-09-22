@@ -717,6 +717,7 @@ header label {
   line-height: 1.5em;
 }
 .post-wrap .post-meta {
+  margin-top: 1rem;
   color: rgba(85,85,85,0.529) !important;
 }
 .dark-theme .post-wrap .post-meta {
@@ -923,7 +924,6 @@ header label {
 }
 .post-copyright {
   margin-top: 5rem;
-  border-top: 1px solid #e8e8e8;
   border-bottom: 1px solid #e8e8e8;
 }
 .post-copyright a {
@@ -945,7 +945,6 @@ header label {
   font-weight: bold;
 }
 .dark-theme .post-copyright {
-  border-top: 1px solid #909196;
   border-bottom: 1px solid #909196;
 }
 .post-content code,
