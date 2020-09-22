@@ -3,16 +3,16 @@ navname: my's Blog
 
 # navigatior items
 nav:
-  Posts: /archives
-  Categories: /category
-  Tags: /tag
+  文章: /archives
+  分类: /category
+  标签: /tag
   # About: /about
 
 # favicon
 favicon: /favicon.ico
 
 # Profile
-nickname: my1325
+nickname: 明天丶希望
 
 ### this variable is MarkDown form.
 # description: Lorem ipsum dolor sit amet, **consectetur adipiscing elit.** <br>Fusce eget urna vitae velit *eleifend interdum at ac* nisi.
