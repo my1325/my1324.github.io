@@ -12,7 +12,7 @@
 
 
 
-<title>testCategory | My1325</title>
+<title>swift自建pod引用.a库 | My1325</title>
 
 
 
@@ -108,7 +108,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">testCategory</h1>
+            <h1 class="post-title">swift自建pod引用.a库</h1>
             
                 <div class="post-meta">
                     
@@ -117,23 +117,26 @@
 
                     
                         <span class="post-time">
-                          &nbsp;&nbsp;&nbsp;日期:&nbsp; <a href="#">2020/09/22&nbsp;&nbsp;14:34:01</a>
+                          &nbsp;&nbsp;&nbsp;日期:&nbsp; <a href="#">2021/01/29&nbsp;&nbsp;18:04:02</a>
                         </span>
                     
-                    
-                        <span class="post-category">
-                      &nbsp;&nbsp;&nbsp;分类:&nbsp;
-                            
-                                <a href="/categories/test/">test</a>
-                            
-                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <p>hello world</p>
+            <p>项目中遇到要封装推送的时候，遇到一个问题，大概是，JPUSH是一个.a库，不能在swift中直接<code>import JPUSHService</code>, 也不能在swift的framework中新建桥接文件去引用<code>import &quot;JPUSHService.h&quot;</code>。</p>
+<p>解决方法是：在自建库的目录中新建一个Modula的目录，在Module的目录中创建<code>modulemap</code>文件，在这个<code>modulemap</code>中去引用这个<code>JPUSHService.h</code>, 然后在指定<code>modulemap</code>文件为这个新建的<code>modulemap</code>文件</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s.preserve_paths = [<span class="string">&#x27;Module/module.modulemap&#x27;</span>]</span><br><span class="line">s.pod_target_xcconfig = &#123;</span><br><span class="line">        <span class="string">&#x27;SWIFT_INCLUDE_PATHS&#x27;</span> =&gt; [<span class="string">&#x27;$(PODS_ROOT)//Module&#x27;</span>, <span class="string">&#x27;$(PODS_TARGET_SRCROOT)/xxx/Module&#x27;</span>],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>新建的modulemap文件内容如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">module JPUSHPackageBridge &#123;</span><br><span class="line">    header &quot;JPUSHService.h&quot;</span><br><span class="line">    export *</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后我们就可以在我们的自建库里面去<code>import JPUSHPackageBridge</code>就可以访问·JPUSHService.h·中的内容了。</p>
+<p>在用本地pod集成的时候遇到一个问题，因为我们的<code>SWIFT_INCLUDE_PATHS</code>指定的<code>$(PODS_ROOT)/Module</code>和<code> $(PODS_TARGET_SRCROOT)/xxx/Module</code>，它们是pod install过后的的路径，但是本地pod的路径没有办法去指定，所以在集成的时候会出现找不到<code>JPUSHPackageBridge</code>的错误，这个时候可以直接发布到测试的仓库中，pod下来然后去完善代码。还有一种解决办法是再创建一个<code>Test</code>的pod，把刚刚的<code>module.modulemap</code>文件放到它的目录中去，在<code>Test.podspec</code>中去指定<code>s.preserve_paths = [&#39;Module/module.modulemap&#39;]</code>, 发布这个<code>Test.podspec</code>到测试仓库中, 在xxx库的<code>xxx.podspec</code>中去重新指定<code>&#39;SWIFT_INCLUDE_PATHS&#39; =&gt; [&#39;$(PODS_ROOT)/Module&#39;, &#39;$(PODS_TARGET_SRCROOT)/Test/Module&#39;]</code>，这样xxx的pod库就可以在本地进行开发。</p>
+<p>使用中还遇到一个问题，因为在项目中使用到了一些JPUSH的API，而封装的pod中也是依赖到了JPUSH，在编译中会报<code>abort:trap</code>的错误，这个目前的解决方案是封装项目中JPUSH的API到封装的pod中去，让项目只通过封装的pod去访问。</p>
+<p>还有一个问题，在使用cocoapods-binary 插件时，需要把引用的<code>JPush</code>和<code>JCore</code>单独放在podfile里面，设置<code>:binary =&gt; false</code>, 同时自己建的库也要设置此选项。</p>
+<p>关于iOS<code>module</code>的内容：<a target="_blank" rel="noopener" href="https://hechen.xyz/post/swift-and-modules/">https://hechen.xyz/post/swift-and-modules/</a></p>
 
         </div>
 
@@ -156,10 +159,6 @@
                 <span>标签:</span>
                 <span class="tag">
                     
-                    
-                        <a href="/tags/test/"> test</a>
-                    
-                        
                 </span>
             </div>
             <div>
@@ -170,8 +169,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2021/01/29/swift%E8%87%AA%E5%BB%BApod%E5%BC%95%E7%94%A8.a%E5%BA%93/">swift自建pod引用.a库</a>
+                <a class="prev" rel="prev" href="/2021/01/29/hello-world/">Hello World</a>
             
+            
+            <a class="next" rel="next" href="/2020/09/22/testCategory/">testCategory</a>
             
         </section>
 
