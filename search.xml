@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/01/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>RxFlow使用记录</title>
+    <url>/2021/01/29/RxFlow%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>1、在官方demo中的可以看到是在AppDelegate中创建了一个<code>FlowCoordinator</code>，一个全局的<code>Coordinator</code>, 通过这个<code>Coordinator</code>传入的<code>AppFlow</code>是最顶层的，在目前的使用中发现，这个最顶层的<code>AppFlow</code>只会响应<code>AppStepper</code>中的事件。如果在下一层中传入的<code>presentable</code>是一个<code>Controller</code>，对应的<code>Stepper</code>是一个<code>ViewModel</code>或是这个<code>Controller</code>自身，则在<code>AppFlow</code>中是收不到这个<code>Stepper</code>的事件的，具体的解决方法是创建一个对应的<code>Flow</code>去处理事件。如果不处理可以转发到<code>ParentFlow</code>既<code>AppFlow</code>中去处理。</p>
+<p>2、在项目中使用到一个<code>WrapViewController</code>去包裹一个<code>controller</code>, 如果<code>presentable</code>传入这个<code>controller</code>而不是外层的<code>WrapViewController</code>，则在<code>popViewController</code>时，这个<code>controller</code>不会释放。</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> controller = <span class="type">UIViewContrller</span>()</span><br><span class="line"><span class="keyword">let</span> wrapController = <span class="type">WrapViewController</span>(controller)</span><br><span class="line">_rootViewController.pushViewController(wrapController)</span><br><span class="line"><span class="type">FlowContributors</span>.one(flowContributor: .contribute(withNextPresentable: controller, withNextStepper: stepper))</span><br></pre></td></tr></table></figure>
+<p>此时的<code>controller</code>, 在<code>popViewController</code>后是不会被释放掉的，只有传入<code>wrapController</code>（ <code>.contribute(withNextPresentable: controller, withNextStepper: stepper)</code>），才可以释放。</p>
 ]]></content>
   </entry>
   <entry>
@@ -33,17 +24,5 @@
 <p>还有一个问题，在使用cocoapods-binary 插件时，需要把引用的<code>JPush</code>和<code>JCore</code>单独放在podfile里面，设置<code>:binary =&gt; false</code>, 同时自己建的库也要设置此选项。</p>
 <p>关于iOS<code>module</code>的内容：<a href="https://hechen.xyz/post/swift-and-modules/">https://hechen.xyz/post/swift-and-modules/</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>testCategory</title>
-    <url>/2020/09/22/testCategory/</url>
-    <content><![CDATA[<p>hello world</p>
-]]></content>
-      <categories>
-        <category>test</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
   </entry>
 </search>

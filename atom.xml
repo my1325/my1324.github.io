@@ -6,7 +6,7 @@
   <link href="http://my1325.github.io/atom.xml" rel="self"/>
   
   <link href="http://my1325.github.io/"/>
-  <updated>2021-01-29T10:04:02.853Z</updated>
+  <updated>2021-01-29T10:15:36.336Z</updated>
   <id>http://my1325.github.io/</id>
   
   <author>
@@ -17,18 +17,18 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://my1325.github.io/2021/01/29/hello-world/"/>
-    <id>http://my1325.github.io/2021/01/29/hello-world/</id>
-    <published>2021-01-29T10:04:02.853Z</published>
-    <updated>2021-01-29T10:04:02.853Z</updated>
+    <title>RxFlow使用记录</title>
+    <link href="http://my1325.github.io/2021/01/29/RxFlow%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"/>
+    <id>http://my1325.github.io/2021/01/29/RxFlow%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</id>
+    <published>2021-01-29T10:15:36.336Z</published>
+    <updated>2021-01-29T10:15:36.336Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;p&gt;1、在官方demo中的可以看到是在AppDelegate中创建了一个&lt;code&gt;FlowCoordinator&lt;/code&gt;，一个全局的&lt;code&gt;Coordinator&lt;/code&gt;,</summary>
         
       
     
@@ -41,8 +41,8 @@
     <title>swift自建pod引用.a库</title>
     <link href="http://my1325.github.io/2021/01/29/swift%E8%87%AA%E5%BB%BApod%E5%BC%95%E7%94%A8.a%E5%BA%93/"/>
     <id>http://my1325.github.io/2021/01/29/swift%E8%87%AA%E5%BB%BApod%E5%BC%95%E7%94%A8.a%E5%BA%93/</id>
-    <published>2021-01-29T10:04:02.853Z</published>
-    <updated>2021-01-29T10:04:02.853Z</updated>
+    <published>2021-01-29T10:15:36.336Z</published>
+    <updated>2021-01-29T10:15:36.336Z</updated>
     
     
       
@@ -55,31 +55,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>testCategory</title>
-    <link href="http://my1325.github.io/2020/09/22/testCategory/"/>
-    <id>http://my1325.github.io/2020/09/22/testCategory/</id>
-    <published>2020-09-22T06:34:01.000Z</published>
-    <updated>2021-01-29T10:04:02.853Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;hello</summary>
-        
-      
-    
-    
-    
-    <category term="test" scheme="http://my1325.github.io/categories/test/"/>
-    
-    
-    <category term="test" scheme="http://my1325.github.io/tags/test/"/>
     
   </entry>
   
